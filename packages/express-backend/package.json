@@ -4,8 +4,8 @@
   "description": "backend for CSC307 final project",
   "license": "ISC",
   "author": "node demons",
-  "type": "commonjs",
-  "main": "index.js",
+  "type": "module",
+  "main": "backend.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx nodemon backend.js",
