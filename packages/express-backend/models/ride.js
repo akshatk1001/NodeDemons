@@ -1,49 +1,56 @@
 import mongoose from 'mongoose';
+import User from './user.js';
 
-const UserSchema = new mongoose.Schema(
+const RideSchema = new mongoose.Schema(
   {
     starting_point: {
-        type: String,
-        required: true,
-        trim: true,
+      type: String,
+      required: true,
+      trim: true,
     },
     destination: {
-        type: String,
-        required: true,
-        trim: true,
+      type: String,
+      required: true,
+      trim: true,
     },
-    date_time: {
-        type: Date,
-        required: true,
+    start_time: {
+      type: Date,
+      required: true,
     },
-    id: {
-        type: String,
-        required: true,
-        trim: true,
-    },
-    user_id: {
-        type: String,
-        required: true,
+    driver: {
+      type: User,
+      required: true,
     },
     other_riders: {
-        type: Array[String],
-        required: false,
+      type: [User],
+      required: false,
     },
     cost: {
-        type: float,
-        required: true,
+      type: Number,
+      required: true,
     },
     car: {
-        type: String,
-        required: false,
-        trim: true,
+      type: String,
+      required: false,
+      trim: true,
     },
-    
+    seats: {
+      type: Number,
+      required: true,
+    },
+    deviation: {
+      type: Number,
+      required: true,
+    },
+    cities_along_route: {
+      type: [String],
+      required: true,
+    },
   },
 
-  { collection: 'users_list' },
+  { collection: 'rides_list' },
 );
 
-const User = mongoose.model('User', UserSchema);
+const Ride = mongoose.model('Ride', RideSchema);
 
-export default User;
+export default Ride;

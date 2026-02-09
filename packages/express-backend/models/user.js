@@ -7,11 +7,6 @@ const UserSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
-    id: {
-      type: String,
-      required: true,
-      trim: true,
-    },
     home_address: {
       type: String,
       required: false,
@@ -24,7 +19,26 @@ const UserSchema = new mongoose.Schema(
     car: {
       type: String,
       required: false,
-    trim: true,
+      trim: true,
+    },
+    phone_num: {
+      type: Number,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: false,
+      trim: true,
+    },
+    venmo_username: {
+      type: String,
+      required: false,
+      trim: true,
+    },
+    paypal_id: {
+      type: String,
+      required: false,
+      trim: true,
     },
   },
 
