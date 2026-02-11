@@ -44,3 +44,5 @@ function createRide(ride) {
   const promise = rideToAdd.save().catch((err) => console.log(err));
   return promise;
 }
+
+export default { getRides, getRidesByDate, getRideById, deleteRide, createRide };
