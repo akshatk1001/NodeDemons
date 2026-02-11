@@ -45,4 +45,8 @@ function createRide(ride) {
   return promise;
 }
 
-export default { getRides, getRidesByDate, getRideById, deleteRide, createRide };
+export default { getRides, 
+  getRidesByDate, 
+  getRideById, 
+  deleteRide, 
+  createRide };
