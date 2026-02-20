@@ -3,9 +3,13 @@ import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
 
+import userService from './services/user-service.js';
+import rideService from './services/ride-service.js';
+
+dotenv.config();
+
 const app = express();
 const port = 8000;
-dotenv.config();
 
 const { MONGO_CONNECTION_STRING } = process.env;
 mongoose.set('debug', true);
@@ -26,4 +30,24 @@ mongoose
 
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
+});
+
+// Create a new user
+app.post('/api/users', async (req, res) => {
+  try {
+    const user = await userService.createUser(req.body);
+    res.status(201).json(user);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+});
+
+// Create a new ride
+app.post('/api/rides', async (req, res) => {
+  try {
+    const ride = await rideService.createRide(req.body);
+    res.status(201).json(ride);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
 });
