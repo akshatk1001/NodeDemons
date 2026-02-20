@@ -7,7 +7,7 @@ function CreateRideWindow({ onClose }) {
     destination: '',
     start_date: '',
     start_time: '',
-    driver: '',
+    driver: '6998d357fcc3234ed1ed6825', // TODO: Replace with actual Driver ID after SSO
     other_riders: [],
     cost: 0,
     car: '',
@@ -29,11 +29,19 @@ function CreateRideWindow({ onClose }) {
     event.target.blur();
   }
 
-  // TODO: Change this to just be handleSubmit which makes a API call
-  function submitForm(event) {
-    event.preventDefault();
+  function postRide(rideData) {
+    const promise = fetch('http://localhost:8000/api/rides', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(rideData),
+    });
+    return promise;
+  }
 
-    // Combine date and time into a single datetime
+  async function submitForm(event) {
+    event.preventDefault();
     const datetime = new Date(`${ride.start_date}T${ride.start_time}`);
 
     const rideData = {
@@ -48,17 +56,27 @@ function CreateRideWindow({ onClose }) {
       deviation: ride.deviation,
       description: ride.description,
     };
+    
+    try {
+      const promise = await postRide(rideData);
+      if (promise.status === 201) {
+        // TODO: Show success message
+        console.log('Ride created successfully', promise.status);
+      } else {
+        // TODO: Show error message
+        console.log('Server response error:', promise.status);
+      }
+    } catch (error) {
+      console.log('Request completely failed:', error);
+    }
 
-    console.log(rideData);
-
-    // props.handleSubmit(rideData);
-
+    // reset ride to default values
     setRide({
       starting_point: 'California Polytechnic University San Luis Obispo',
       destination: '',
       start_date: '',
       start_time: '',
-      driver: '',
+      driver: '6998d357fcc3234ed1ed6825', // TODO: Replace with actual Driver ID after SSO
       other_riders: [],
       cost: 0,
       car: '',

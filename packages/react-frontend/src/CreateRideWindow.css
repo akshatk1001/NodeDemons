@@ -125,6 +125,7 @@ input::-webkit-inner-spin-button {
   padding: 0;
   background: transparent;
   line-height: 1;
+  border-radius: 0;
 }
 
 .create-ride-form textarea {
