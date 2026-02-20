@@ -24,6 +24,11 @@ function CreateRideWindow({ onClose }) {
     });
   }
 
+  // Prevent scroll from changing number inputs
+  function handleWheel(event) {
+    event.target.blur();
+  }
+
   // TODO: Change this to just be handleSubmit which makes a API call
   function submitForm(event) {
     event.preventDefault();
@@ -136,6 +141,7 @@ function CreateRideWindow({ onClose }) {
                 id="cost"
                 value={ride.cost}
                 onChange={handleChange}
+                onWheel={handleWheel}
               />
             </div>
           </div>
@@ -150,6 +156,7 @@ function CreateRideWindow({ onClose }) {
               id="seats"
               value={ride.seats}
               onChange={handleChange}
+              onWheel={handleWheel}
             />
           </div>
 
@@ -163,6 +170,7 @@ function CreateRideWindow({ onClose }) {
               id="deviation"
               value={ride.deviation}
               onChange={handleChange}
+              onWheel={handleWheel}
             />
           </div>
 

@@ -97,6 +97,13 @@
   outline: none;
 }
 
+/* Remove spinner buttons from number inputs */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 /* Input with prefix (like dollar sign) */
 .input-with-prefix {
   display: flex;
@@ -111,11 +118,13 @@
   font-weight: 400;
   color: #333;
   margin-right: 4px;
+  line-height: 1;
 }
 
 .input-with-prefix input {
   padding: 0;
   background: transparent;
+  line-height: 1;
 }
 
 .create-ride-form textarea {
