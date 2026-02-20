@@ -14,7 +14,7 @@ const UserSchema = new mongoose.Schema(
     },
     ratings: {
       type: [Number],
-      required: false,
+      required: true,
     },
     car: {
       type: String,
