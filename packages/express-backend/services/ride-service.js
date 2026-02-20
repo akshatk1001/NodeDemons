@@ -16,13 +16,17 @@ mongoose.set('debug', true);
 
 //function to get rides going to that destination regardless of date
 function getRides(destination) {
-  const promise = rideModel.find({ destination: destination}).catch((err) => console.log(err));
+  const promise = rideModel
+    .find({ destination: destination })
+    .catch((err) => console.log(err));
   return promise;
 }
 
 //function to get rides going to that destination on that date
 function getRidesByDate(destination, date) {
-  const promise = rideModel.find({ destination: destination, date: date }).catch((err) => console.log(err));
+  const promise = rideModel
+    .find({ destination: destination, date: date })
+    .catch((err) => console.log(err));
   return promise;
 }
 
@@ -34,7 +38,9 @@ function getRideById(rideId) {
 
 //function to delete a ride by its id
 function deleteRide(rideId) {
-  const promise = rideModel.findByIdAndDelete(rideId).catch((err) => console.log(err));
+  const promise = rideModel
+    .findByIdAndDelete(rideId)
+    .catch((err) => console.log(err));
   return promise;
 }
 
@@ -45,8 +51,10 @@ function createRide(ride) {
   return promise;
 }
 
-export default { getRides, 
-  getRidesByDate, 
-  getRideById, 
-  deleteRide, 
-  createRide };
+export default {
+  getRides,
+  getRidesByDate,
+  getRideById,
+  deleteRide,
+  createRide,
+};

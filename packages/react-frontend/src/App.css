@@ -14,7 +14,7 @@
 
 /* Green navbar */
 .navbar {
-  background-color: #154734;
+  background-color: #106b21;
   padding: 16px 24px;
   display: flex;
   align-items: center;
@@ -32,4 +32,26 @@
 .main-content {
   flex: 1;
   background-color: #f0f0f0;
+}
+
+/* Gold Create Ride button */
+.createRide-button {
+  margin-left: auto;
+  background: #c69314;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.createRide-button:hover {
+  background: #a8770f;
+}
+
+.createRide-button:active {
+  transform: scale(0.96);
 }
