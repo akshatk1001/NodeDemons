@@ -22,19 +22,15 @@
 }
 
 /* White bold logo text */
-.navbar-logo {
-  height: 40px;
+.navbar-logo img {
+  height: 70px;
   width: auto;
   display: block;
-  margin-top: 1px;
-  margin-left: auto;
-  margin-right: auto;
-
 }
 
 /* car logo */
-.navbar-icon {
-  height: 10px;
+.navbar-icon img {
+  height: 40px;
   width: auto;
   display: block;
 }
