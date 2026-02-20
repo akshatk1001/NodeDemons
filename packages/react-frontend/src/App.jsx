@@ -1,20 +1,30 @@
 import './App.css';
+import PolyPoolLogo from './imagesAndIcons/PolyPoolLogo.png';
+import PolyPoolIcon from './imagesAndIcons/PolyPoolIcon.png';
+import PlusIcon from './imagesAndIcons/PlusIcon.png'
 import RideForm from './RideForm';
-import CreateRide from './CreateRide';
+import { useState } from 'react';
+import CreateRideWindow from './CreateRideWindow';
 
 function App() {
-  //post(ride)
-
-  //updateRideList(ride)
+  const [showCreateRide, setShowCreateRide] = useState(false);
 
   return (
     <div className="app">
       <nav className="navbar">
-        <span className="navbar-logo">POLYPOOL</span>
-        <button className="createRide-button">Create Ride</button>
+        <span className="navbar-icon"><img src={PolyPoolIcon} alt='PolyPool Icon' /></span>
+        <span className="navbar-logo"><img src={PolyPoolLogo} alt='PolyPool Logo'/></span>
+
+        <button 
+          className="createRide-button" onClick={() => setShowCreateRide(true)}>
+          <img src={PlusIcon} alt='Plus Icon' ></img>
+
+          Create Ride
+        </button>
+        {showCreateRide && (<CreateRideWindow onClose={() => setShowCreateRide(false)} />)}
+
       </nav>
       <main className="main-content">
-        <CreateRide />
       </main>
     </div>
   );

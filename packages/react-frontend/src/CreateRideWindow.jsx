@@ -1,13 +1,13 @@
 import React from 'react';
-import './CreateRide.css';
+import './CreateRideWindow.css';
+function CreateRideWindow({onClose}) {
 
-function CreateRide() {
   return (
-    <div className="create-ride-container">
+    <div className="create-ride-window">
       <div className="create-ride-card">
         <div className="create-ride-header">
-          <h2>Create A Ride</h2>
-          <span className="close-btn">×</span>
+          <h2>Create Ride</h2>
+          <span className="close-btn" onClick={onClose}>×</span>
         </div>
 
         <form className="create-ride-form">
@@ -54,4 +54,4 @@ function CreateRide() {
   );
 }
 
-export default CreateRide;
+export default CreateRideWindow;

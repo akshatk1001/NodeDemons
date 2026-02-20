@@ -20,12 +20,19 @@
   align-items: center;
 }
 
+.navbar img{
+  height: 60px;
+  width: auto;
+}
+
 /* White bold logo text */
 .navbar-logo {
-  color: white;
-  font-size: 24px;
-  font-weight: 700;
-  letter-spacing: 2px;
+  height: clamp(30px, 5vw, 50px);
+}
+
+/* White bold logo text */
+.navbar-icon {
+  height: clamp(30px, 5vw, 50px);
 }
 
 /* Gray page background fills remaining space */
@@ -36,6 +43,10 @@
 
 /* Gold Create Ride button */
 .createRide-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   margin-left: auto;
   background: #c69314;
   color: white;
@@ -46,6 +57,11 @@
   font-weight: 600;
   cursor: pointer;
   transition: 0.2s ease;
+}
+
+.createRide-button img{
+height: 30px;
+padding: 0%;
 }
 
 .createRide-button:hover {
