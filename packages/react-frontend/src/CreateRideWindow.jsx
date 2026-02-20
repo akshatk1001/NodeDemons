@@ -79,7 +79,7 @@ function CreateRideWindow({ onClose }) {
               <label htmlFor="starting_point">Start Location</label>
               <input
                 type="text"
-                placeholder="Start Location"
+                placeholder="Cal Poly"
                 name="starting_point"
                 id="starting_point"
                 value={ride.starting_point}
@@ -91,7 +91,7 @@ function CreateRideWindow({ onClose }) {
               <label htmlFor="destination">Destination</label>
               <input
                 type="text"
-                placeholder="Destination"
+                placeholder="San Francisco"
                 name="destination"
                 id="destination"
                 value={ride.destination}
@@ -126,15 +126,18 @@ function CreateRideWindow({ onClose }) {
 
           <div className="form-field full-width">
             <label htmlFor="cost">Cost per Seat</label>
-            <input
-              className="full-width"
-              type="number"
-              placeholder="Cost per seat"
-              name="cost"
-              id="cost"
-              value={ride.cost}
-              onChange={handleChange}
-            />
+            <div className="input-with-prefix">
+              <span className="input-prefix">$</span>
+              <input
+                className="full-width"
+                type="number"
+                placeholder="0"
+                name="cost"
+                id="cost"
+                value={ride.cost}
+                onChange={handleChange}
+              />
+            </div>
           </div>
 
           <div className="form-field full-width">

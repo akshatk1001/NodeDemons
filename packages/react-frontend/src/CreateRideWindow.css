@@ -97,6 +97,26 @@
   outline: none;
 }
 
+/* Input with prefix (like dollar sign) */
+.input-with-prefix {
+  display: flex;
+  align-items: center;
+  background: #cfcfcf;
+  border-radius: 10px;
+  padding-left: 18px;
+}
+
+.input-prefix {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.input-with-prefix input {
+  padding-left: 8px;
+  background: transparent;
+}
+
 .create-ride-form textarea {
   width: 100%;
   padding: 18px;
