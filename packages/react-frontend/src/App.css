@@ -20,7 +20,7 @@
   align-items: center;
 }
 
-.navbar img{
+.navbar img {
   height: 60px;
   width: auto;
 }
@@ -59,9 +59,9 @@
   transition: 0.2s ease;
 }
 
-.createRide-button img{
-height: 30px;
-padding: 0%;
+.createRide-button img {
+  height: 30px;
+  padding: 0%;
 }
 
 .createRide-button:hover {

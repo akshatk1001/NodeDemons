@@ -1,13 +1,14 @@
 import React from 'react';
 import './CreateRideWindow.css';
-function CreateRideWindow({onClose}) {
-
+function CreateRideWindow({ onClose }) {
   return (
     <div className="create-ride-window">
       <div className="create-ride-card">
         <div className="create-ride-header">
           <h2>Create Ride</h2>
-          <span className="close-btn" onClick={onClose}>×</span>
+          <span className="close-btn" onClick={onClose}>
+            ×
+          </span>
         </div>
 
         <form className="create-ride-form">

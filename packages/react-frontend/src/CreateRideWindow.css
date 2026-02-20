@@ -1,13 +1,13 @@
 .create-ride-window {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.4);
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    z-index: 1000;
+  z-index: 1000;
 }
 
 /* Main white card */
