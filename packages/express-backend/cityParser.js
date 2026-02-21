@@ -14,7 +14,7 @@ function loadCities() {
         const cityName = row.Name.trim().toLowerCase();
         cities[cityName] = {
           lat: parseFloat(row.Latitude),
-          lon: parseFloat(row.Longitude)
+          lon: parseFloat(row.Longitude),
         };
       })
       .on('end', resolve)

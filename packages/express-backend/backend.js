@@ -53,11 +53,11 @@ app.post('/api/rides', async (req, res) => {
 });
 
 // Get all rides
-app.get("/api/rides", async (req, res) => {
+app.get('/api/rides', async (req, res) => {
   try {
     const rides = await Ride.find();
     res.status(200).json(rides);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
-  });
+});

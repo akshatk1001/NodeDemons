@@ -56,7 +56,7 @@ function CreateRideWindow({ onClose }) {
       deviation: ride.deviation,
       description: ride.description,
     };
-    
+
     try {
       const promise = await postRide(rideData);
       if (promise.status === 201) {
@@ -218,7 +218,13 @@ function CreateRideWindow({ onClose }) {
             />
           </div>
 
-          <button className="create-button" onClick={() => { submitForm(); onClose(); }}>
+          <button
+            className="create-button"
+            onClick={() => {
+              submitForm();
+              onClose();
+            }}
+          >
             Create
           </button>
         </form>

@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 
-
-function fetchRides(value){
-    const promise = fetch("http:localhost:8000/rides");
-    return promise;
+function fetchRides(value) {
+  const promise = fetch('http:localhost:8000/rides');
+  return promise;
 }
 
 const SearchBar = () => {
@@ -15,7 +14,7 @@ const SearchBar = () => {
     const fetchData = async () => {
       try {
         const { data } = await fetch(
-          `http://localhost:8000/rides/search?q=${value}`
+          `http://localhost:8000/rides/search?q=${value}`,
         );
 
         setSuggestions(data.rides);
@@ -29,13 +28,13 @@ const SearchBar = () => {
 
   return (
     <input
-        type="text"
-        className="search-bar"
-        placeholder="Find Your Journey"
-        value={value}
-        onChange={(e) => {
-            setValue(e.target.value);
-        }}
+      type="text"
+      className="search-bar"
+      placeholder="Find Your Journey"
+      value={value}
+      onChange={(e) => {
+        setValue(e.target.value);
+      }}
     />
   );
 };
