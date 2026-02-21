@@ -51,3 +51,13 @@ app.post('/api/rides', async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 });
+
+// Get all rides
+app.get("/api/rides", async (req, res) => {
+  try {
+    const rides = await Ride.find();
+    res.status(200).json(rides);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+  });
